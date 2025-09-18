@@ -1,58 +1,149 @@
-2025-09-16 20:53:23,040 -  nornir.core -     INFO -        run() - Running task 'full_workflow' with args {} on 3 hosts
-2025-09-16 20:53:23,046 - nornir.core.task -    ERROR -      start() - Host 'PE2': task 'full_workflow' failed with traceback:
+2025-09-18 13:34:21,114 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 13:35:29,824 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 13:35:29,825 - nornir - INFO - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 13:35:29,825 - nornir - INFO - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 13:35:29,826 - nornir - INFO - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:23:17,550 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:23:17,551 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:23:17,551 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:23:17,554 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:23:17,555 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:23:17,555 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:23:17,556 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:47:14,729 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:47:14,730 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:47:14,731 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:47:14,731 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:47:14,735 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:47:14,736 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:47:14,736 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:47:14,736 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:47:14,736 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:49:07,101 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:49:07,102 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:49:07,102 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:49:07,102 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:49:07,106 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:49:07,106 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:49:07,103 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:49:07,106 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:49:07,107 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:49:08,863 - nornir.core.task - ERROR - Host 'PE1': task 'apply_sros_config' failed with traceback:
 Traceback (most recent call last):
   File "/home/user/nornir/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
     r = self.task(self, **self.params)
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/user/nornir/./main.py", line 10, in full_workflow
-    task.run(task=apply_sros_config)
-  File "/home/user/nornir/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
-    raise NornirSubTaskError(task=run_task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: apply_sros_config (failed)
+  File "/home/user/nornir/tasks/apply_sros_config.py", line 46, in apply_sros_config
+    return Result(host=task.host, result=result, diff=diff, changed=changed)
+                                         ^^^^^^
+NameError: name 'result' is not defined. Did you mean: 'Result'?
 
-
-2025-09-16 20:53:23,048 - nornir.core.task -    ERROR -      start() - Host 'PE3': task 'full_workflow' failed with traceback:
+2025-09-18 17:51:31,531 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:51:31,532 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:51:31,532 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:51:31,536 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:51:31,538 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:51:31,538 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:51:31,538 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:51:31,539 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:51:31,539 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:52:10,966 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:52:10,967 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:52:10,967 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:52:10,968 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:52:10,968 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:52:10,969 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:52:10,968 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:52:10,969 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:52:10,969 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:52:27,061 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:52:27,062 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:52:27,062 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:52:27,062 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:52:27,064 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:52:27,063 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:52:27,064 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:52:27,064 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:52:27,064 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:53:28,924 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:53:28,925 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:53:28,925 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:53:28,929 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:53:28,929 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:53:28,929 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:53:28,929 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:53:28,930 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:53:28,930 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:53:44,683 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:53:44,683 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:53:44,684 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:53:44,687 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:53:44,687 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:53:44,688 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:53:44,688 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:53:44,688 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:53:44,688 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:55:22,643 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:55:22,644 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:55:22,644 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:55:22,645 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:55:22,646 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:55:22,646 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:55:22,646 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:55:22,647 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:55:22,647 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:55:24,545 - nornir.core.task - ERROR - Host 'PE1': task 'apply_sros_config' failed with traceback:
 Traceback (most recent call last):
   File "/home/user/nornir/venv/lib/python3.12/site-packages/nornir/core/task.py", line 98, in start
     r = self.task(self, **self.params)
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/user/nornir/./main.py", line 10, in full_workflow
-    task.run(task=apply_sros_config)
-  File "/home/user/nornir/venv/lib/python3.12/site-packages/nornir/core/task.py", line 173, in run
-    raise NornirSubTaskError(task=run_task, result=r)
-nornir.core.exceptions.NornirSubTaskError: Subtask: apply_sros_config (failed)
+  File "/home/user/nornir/tasks/apply_sros_config.py", line 45, in apply_sros_config
+    return Result(host=task.host, result=result, diff=diff, changed=changed)
+                                         ^^^^^^
+UnboundLocalError: cannot access local variable 'result' where it is not associated with a value
 
-
-2025-09-16 21:11:10,665 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 21:11:44,422 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 21:12:25,715 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 21:13:55,859 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 21:16:00,959 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 21:16:36,731 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 21:20:56,342 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:14:03,778 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:16:09,997 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:19:15,103 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:21:38,849 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:22:18,356 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:23:00,427 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:23:41,878 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:24:33,905 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:25:14,614 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:25:40,398 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:26:06,870 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:26:42,429 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:27:16,444 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:28:00,464 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:29:50,654 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:30:32,252 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:31:05,221 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:32:22,032 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:32:53,433 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:41:47,252 -  nornir.core -     INFO -        run() - Running task 'fetch_config' with args {} on 3 hosts
-2025-09-16 22:47:03,301 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:47:40,835 -  nornir.core -     INFO -        run() - Running task 'run_sros_ping' with args {} on 3 hosts
-2025-09-16 22:49:45,610 -  nornir.core -     INFO -        run() - Running task 'apply_sros_config' with args {} on 3 hosts
-2025-09-16 22:50:20,393 -  nornir.core -     INFO -        run() - Running task 'apply_sros_config' with args {} on 3 hosts
-2025-09-16 22:51:01,494 -  nornir.core -     INFO -        run() - Running task 'apply_sros_config' with args {} on 3 hosts
-2025-09-16 22:51:28,626 -  nornir.core -     INFO -        run() - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:56:18,918 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:56:18,919 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:56:18,919 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:56:18,919 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:56:18,920 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:56:18,920 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:56:18,920 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:56:18,922 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:56:18,922 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:56:22,979 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:56:22,979 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:56:22,980 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:56:22,982 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:56:22,982 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:56:22,982 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:56:22,984 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:56:22,984 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:56:22,984 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:56:25,859 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:56:25,859 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:56:25,860 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:56:25,861 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:56:25,860 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:56:25,860 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:56:25,861 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:56:25,863 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:56:25,865 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 17:56:38,129 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 17:56:38,130 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 17:56:38,130 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 17:56:38,132 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 17:56:38,132 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 17:56:38,134 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 17:56:38,134 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 17:56:38,135 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 17:56:38,135 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 18:06:58,464 - nornir.core - INFO - Running task 'apply_sros_config' with args {} on 3 hosts
+2025-09-18 18:06:58,465 - nornir.core.task - DEBUG - Host 'PE1': running task 'apply_sros_config'
+2025-09-18 18:06:58,466 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE1
+2025-09-18 18:06:58,466 - nornir.core.task - DEBUG - Host 'PE2': running task 'apply_sros_config'
+2025-09-18 18:06:58,466 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE2
+2025-09-18 18:06:58,466 - nornir - ERROR - Ошибка на PE2: [Errno 2] No such file or directory: 'configs/PE2_config.mdcli'
+2025-09-18 18:06:58,466 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
+2025-09-18 18:06:58,466 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
+2025-09-18 18:06:58,467 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType

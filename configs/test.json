@@ -1,6 +1,6 @@
 {
     "nokia-conf:configuration-mode": "model-driven",
-    "nokia-conf:commit-history": 139,
+    "nokia-conf:commit-history": 29,
     "nokia-conf:cli": {
         "md-cli": {
             "auto-config-save": true
