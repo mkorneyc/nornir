@@ -1,7 +1,5 @@
 from nornir.core.task import Task, Result
 from pysros.management import connect
-import os
-from pysros.wrappers import Leaf, Container
 import json
 import logging
 
@@ -24,10 +22,10 @@ def apply_sros_config(task: Task) -> Result:
 
         device = connect(**node, hostkey_verify=False)
         path = "/nokia-conf:configure/system/management-interface"
-        current_config = device.running.get(path)
+        #        current_config = device.running.get(path)
 
         device.candidate.set(path, config, commit=False)
-        candidate_config = device.candidate.get(path)
+        #        candidate_config = device.candidate.get(path)
 
         diff = device.candidate.compare(output_format="md-cli")
 

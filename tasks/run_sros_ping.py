@@ -1,6 +1,7 @@
 from nornir.core.task import Task, Result
 from pysros.management import connect
-from pysros.pprint import printTree
+
+# from pysros.pprint import printTree
 
 
 def run_sros_ping(task: Task) -> Result:

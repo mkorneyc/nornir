@@ -1,9 +1,7 @@
-- add git -> push to gitlab
 - logging
 - tests
 - NAPALM (nokia, cisco, juniper)
 - invertory from excel
-- black + flake8 в vscode
 - requirements.txt обновить
 - readmy (преднастройки sros, как запускать(venv, requirements), картинка топологии)
 
