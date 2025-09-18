@@ -155,3 +155,7 @@ UnboundLocalError: cannot access local variable 'result' where it is not associa
 2025-09-18 18:11:54,301 - nornir.core.task - DEBUG - Host 'PE1': running task 'run_sros_ping'
 2025-09-18 18:11:54,301 - nornir.core.task - DEBUG - Host 'PE2': running task 'run_sros_ping'
 2025-09-18 18:11:54,302 - nornir.core.task - DEBUG - Host 'PE3': running task 'run_sros_ping'
+2025-09-18 18:22:22,520 - nornir.core - INFO - Running task 'run_sros_ping' with args {} on 3 hosts
+2025-09-18 18:22:22,520 - nornir.core.task - DEBUG - Host 'PE1': running task 'run_sros_ping'
+2025-09-18 18:22:22,524 - nornir.core.task - DEBUG - Host 'PE2': running task 'run_sros_ping'
+2025-09-18 18:22:22,526 - nornir.core.task - DEBUG - Host 'PE3': running task 'run_sros_ping'

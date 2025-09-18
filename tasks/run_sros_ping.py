@@ -34,7 +34,7 @@ def run_sros_ping(task: Task) -> Result:
 
         device.disconnect()
 
-        return Result(host=task.host, failed=failed)
-
     except Exception as e:
         return Result(host=task.host, failed=True, result=f"Error: {e}")
+
+    return Result(host=task.host, failed=failed)

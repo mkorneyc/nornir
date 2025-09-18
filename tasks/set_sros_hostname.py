@@ -25,11 +25,11 @@ def set_sros_hostname(task: Task) -> Result:
 
         device.disconnect()
 
-        return Result(
-            host=task.host,
-            result={"old": current_hostname, "new": desired_hostname},
-            changed=changed,
-        )
-
     except Exception as e:
         return Result(host=task.host, failed=True, result=f"Error: {e}")
+
+    return Result(
+        host=task.host,
+        result={"old_hostname": current_hostname, "new_hostname": desired_hostname},
+        changed=changed,
+    )
