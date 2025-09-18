@@ -21,7 +21,8 @@ def fetch_config(
             scp.get(remote_file, local_file)
 
         ssh.close()
-        return Result(host=task.host, result=f"Config saved to {local_file}")
 
     except Exception as e:
         return Result(host=task.host, failed=True, result=str(e))
+
+    return Result(host=task.host, result=f"Config saved to {local_file}")

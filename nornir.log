@@ -147,3 +147,11 @@ UnboundLocalError: cannot access local variable 'result' where it is not associa
 2025-09-18 18:06:58,466 - nornir.core.task - DEBUG - Host 'PE3': running task 'apply_sros_config'
 2025-09-18 18:06:58,466 - nornir - DEBUG - Начало задачи apply_sros_config на хосте PE3
 2025-09-18 18:06:58,467 - nornir - ERROR - Ошибка на PE3: expected str, bytes or os.PathLike object, not NoneType
+2025-09-18 18:08:54,498 - nornir.core - INFO - Running task 'fetch_config' with args {} on 3 hosts
+2025-09-18 18:08:54,498 - nornir.core.task - DEBUG - Host 'PE1': running task 'fetch_config'
+2025-09-18 18:08:54,499 - nornir.core.task - DEBUG - Host 'PE2': running task 'fetch_config'
+2025-09-18 18:08:54,499 - nornir.core.task - DEBUG - Host 'PE3': running task 'fetch_config'
+2025-09-18 18:11:54,300 - nornir.core - INFO - Running task 'run_sros_ping' with args {} on 3 hosts
+2025-09-18 18:11:54,301 - nornir.core.task - DEBUG - Host 'PE1': running task 'run_sros_ping'
+2025-09-18 18:11:54,301 - nornir.core.task - DEBUG - Host 'PE2': running task 'run_sros_ping'
+2025-09-18 18:11:54,302 - nornir.core.task - DEBUG - Host 'PE3': running task 'run_sros_ping'

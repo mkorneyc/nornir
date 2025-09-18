@@ -17,3 +17,5 @@ def get_sros_config(task: Task) -> Result:
 
     except Exception as e:
         return Result(host=task.host, failed=True, result=f"Error: {e}")
+
+    return Result(host=task.host, result=f"Config received")

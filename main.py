@@ -24,5 +24,5 @@ def full_workflow(task: Task) -> Result:
 
 
 # result = nr.run(task=full_workflow)
-result = nr.run(task=apply_sros_config)
+result = nr.run(task=run_sros_ping)
 print_result(result)
