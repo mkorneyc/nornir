@@ -1,0 +1,4 @@
+system:
+  loopback:
+    name: Loopback0
+    description: Configured via PySROS + Nornir YAML
