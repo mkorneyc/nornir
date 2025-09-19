@@ -1,5 +1,8 @@
 from nornir.core.task import Task, Result
 from pysros.management import connect
+import logging
+
+logger = logging.getLogger("nornir")
 
 path = "/nokia-conf:configure/system"
 
@@ -22,6 +25,9 @@ def set_sros_hostname(task: Task) -> Result:
         if current_hostname != desired_hostname:
             device.candidate.set(path, {"name": desired_hostname}, commit=True)
             changed = True
+            logger.debug(
+                f"Имя хоста изменено с {current_hostname} на {desired_hostname} на хосте {task.host.name}"
+            )
 
         device.disconnect()
 

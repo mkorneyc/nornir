@@ -1,10 +1,14 @@
 from nornir.core.task import Task, Result
 from pysros.management import connect
+import logging
+
+logger = logging.getLogger("nornir")
 
 # from pysros.pprint import printTree
 
 
 def run_sros_ping(task: Task) -> Result:
+    logger.debug(f"Начало задачи {task.name} на хосте {task.host.name}")
     node = {
         "host": task.host.hostname,
         "username": task.host.username,
@@ -21,19 +25,21 @@ def run_sros_ping(task: Task) -> Result:
         #        printTree(result)
         #        print(dict(result))
 
-        if (
-            str(
-                result.get("results")
-                .get("summary")
-                .get("statistics")
-                .get("packets")
-                .get("loss")
-            )
-            == "0.0"
-        ):
-            failed = False
+        loss = str(
+            result.get("results")
+            .get("summary")
+            .get("statistics")
+            .get("packets")
+            .get("loss")
+        )
 
+        if loss == "0.0":
+            failed = False
+        else:
+            pass
         device.disconnect()
+
+        logger.info(f"Потеря пакетов на хосте {task.host.name}: {loss}%")
 
     except Exception as e:
         return Result(host=task.host, failed=True, result=f"Error: {e}")

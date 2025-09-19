@@ -6,6 +6,7 @@ inventory:
         group_file: "inventory/groups.yaml"
         defaults_file: "inventory/defaults.yaml"
 runner:
-    plugin: threaded
-    options:
-        num_workers: 100
+    plugin: serial
+#    plugin: threaded
+#    options:
+#        num_workers: 100

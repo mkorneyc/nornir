@@ -1,17 +1,16 @@
 from nornir import InitNornir
+from nornir.core.task import Task, Result
 from nornir_utils.plugins.functions import print_result
-from tasks import *
 
-
-nr = InitNornir(
-    config_file="config.yaml",
-    logging={
-        "enabled": True,  # Включить логирование
-        "level": "DEBUG",  # Уровень логирования: DEBUG, INFO, WARNING, ERROR
-        "log_file": "nornir.log",  # Файл для записи логов
-        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",  # Формат логов
-        "to_console": False,  # Выводить ли логи в консоль
-    },
+# from tasks import *
+from tasks import (
+    apply_sros_config,
+    get_sros_config,
+    run_sros_ping,
+    set_sros_hostname,
+    fetch_config,
+    get_facts_napalm,
+    set_hostname_napalm,
 )
 
 
@@ -20,9 +19,34 @@ def full_workflow(task: Task) -> Result:
     task.run(task=get_sros_config)
     task.run(task=run_sros_ping)
     task.run(task=set_sros_hostname)
+    task.run(task=fetch_config)
     return Result(host=task.host)
 
 
-# result = nr.run(task=full_workflow)
-result = nr.run(task=run_sros_ping)
-print_result(result)
+def main():
+
+    nr = InitNornir(
+        config_file="config.yaml",
+        logging={
+            "enabled": True,  # Включить логирование
+            "level": "DEBUG",  # Уровень логирования: DEBUG, INFO, WARNING, ERROR
+            "log_file": "nornir.log",  # Файл для записи логов
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",  # Формат логов
+            "to_console": False,  # Выводить ли логи в консоль
+        },
+    )
+
+    # result = nr.run(task=full_workflow)
+    # result = nr.run(task=get_facts_napalm)
+
+    new_hostnames = {host: f"{host}-lab" for host in nr.inventory.hosts}
+
+    result = nr.run(
+        task=set_hostname_napalm, hostname=lambda task: new_hostnames[task.host.name]
+    )
+
+    print_result(result)
+
+
+if __name__ == "__main__":
+    main()
