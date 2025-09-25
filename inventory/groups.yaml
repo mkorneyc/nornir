@@ -1,0 +1,4 @@
+routers:
+  data:
+    site: lab
+    config_file: "configs/loopback_config.yaml"

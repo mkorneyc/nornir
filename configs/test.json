@@ -1,0 +1,17 @@
+{
+    "nokia-conf:configuration-mode": "model-driven",
+    "nokia-conf:commit-history": 29,
+    "nokia-conf:cli": {
+        "md-cli": {
+            "auto-config-save": true
+        }
+    },
+    "nokia-conf:netconf": {
+        "admin-state": "enable",
+        "auto-config-save": true
+    },
+    "nokia-conf:yang-modules": {
+        "nokia-submodules": true,
+        "nokia-combined-modules": false
+    }
+}

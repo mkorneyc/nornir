@@ -1,0 +1,6 @@
+colorama==0.4.6
+nornir==3.5.0
+nornir-utils==0.2.0
+ruamel.yaml==0.18.15
+ruamel.yaml.clib==0.2.12
+setuptools==80.9.0

@@ -1,0 +1,10 @@
+- logging
+- tests
+- NAPALM (nokia, cisco, juniper)
+- scrapli
+- invertory from excel
+- requirements.txt обновить
+- readmy (преднастройки sros, как запускать(venv, requirements), картинка топологии)
+
+- проверить что может Ansible
+- проверить что может copilot
